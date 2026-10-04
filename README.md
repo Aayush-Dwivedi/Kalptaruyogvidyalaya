@@ -147,7 +147,7 @@ MONGODB_URI=mongodb://localhost:27017/kalptaru_yog_vidyalaya
 JWT_SECRET=your_super_secret_jwt_key_at_least_32_characters_long
 JWT_EXPIRES_IN=7d
 
-# Supabase Storage (Object Storage - DO NOT USE CLOUDINARY)
+# Supabase Storage (Object Storage )
 SUPABASE_URL=https://your-project-id.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_secret_key
 SUPABASE_STORAGE_BUCKET=kalptaru-media
