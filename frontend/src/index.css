@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand Primary: Deep Royal Plum */
+    --color-plum-950: #1A0719;
+    --color-plum-900: #2A1128;
+    --color-plum-800: #3B1838;
+    --color-plum-700: #4D244D;
+    --color-plum-100: #F4E7F4;
+    --color-plum-50: #FBF5FB;
+
+    /* Brand Secondary: Antique Gold */
+    --color-gold-600: #A98344;
+    --color-gold-500: #C5A059;
+    --color-gold-400: #D8B26E;
+    --color-gold-300: #E1C48C;
+    --color-gold-200: #EDDCB6;
+    --color-gold-100: #F6EEDB;
+    --color-gold-50: #FBF8F0;
+
+    /* Brand Neutral Canvas & Surfaces: Warm Ivory & Cream */
+    --color-canvas: #FDFBF7;
+    --color-canvas-warm: #FAF7F0;
+    --color-surface: #FFFFFF;
+    --color-surface-subtle: #F6F3EC;
+
+    /* Brand Earth / Terracotta Accents */
+    --color-earth-700: #5C382B;
+    --color-earth-600: #7B4E3D;
+    --color-earth-500: #8C7164;
+    --color-earth-100: #F0ECE8;
+
+    /* Brand Ink / Typography */
+    --color-ink-charcoal: #1A1718;
+    --color-ink-muted: #5A5355;
+    --color-ink-faint: #8E8588;
+
+    /* Borders & Hairlines */
+    --color-border-subtle: #E8E2D8;
+    --color-border-gold: rgba(197, 160, 89, 0.4);
+    --color-border-gold-faint: rgba(197, 160, 89, 0.2);
+    --color-border-plum: rgba(42, 17, 40, 0.15);
+
+    /* Shadows - Restrained & Gentle */
+    --shadow-soft: 0 2px 8px -2px rgba(42, 17, 40, 0.04), 0 1px 4px -1px rgba(42, 17, 40, 0.02);
+    --shadow-card: 0 4px 16px -2px rgba(42, 17, 40, 0.06), 0 2px 6px -1px rgba(42, 17, 40, 0.03);
+    --shadow-modal: 0 20px 40px -8px rgba(42, 17, 40, 0.18), 0 8px 16px -4px rgba(42, 17, 40, 0.08);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--color-ink-charcoal);
+    background-color: var(--color-canvas);
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Editorial Serif Headings */
+  h1, h2, h3, h4, h5, h6, .font-editorial {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    font-feature-settings: "lnum" 1;
+    letter-spacing: -0.01em;
+  }
+
+  /* Custom Selection styling matching brand gold */
+  ::selection {
+    background-color: #2A1128;
+    color: #E1C48C;
+  }
+
+  /* Refined Subtle Scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #FAF7F0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #D8B26E;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C5A059;
+  }
+}
+
+@layer utilities {
+  .bg-canvas {
+    background-color: #FDFBF7;
+  }
+  .bg-surface {
+    background-color: #FFFFFF;
+  }
+  .bg-ivory {
+    background-color: #FDFBF7;
+  }
+  .text-ivory {
+    color: #FDFBF7;
+  }
+  .border-ivory {
+    border-color: #FDFBF7;
+  }
+}
+
+/* Restrained Micro-Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes backdropFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.88;
+    transform: scale(1.02);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-backdrop {
+  animation: backdropFade 0.25s ease-out forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}

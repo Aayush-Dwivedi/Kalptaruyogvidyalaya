@@ -1,0 +1,39 @@
+import React, { useEffect } from 'react';
+import { Container } from '../components/Container';
+import { ProgramsSection } from '../sections/home/ProgramsSection';
+import { Link, useLocation } from 'react-router-dom';
+
+export const ProgramsPage: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.replace('#', ''));
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+      }
+    }
+  }, [location]);
+
+  return (
+    <div className="w-full bg-canvas text-ink min-h-screen">
+      {/* Breadcrumb Header */}
+      <div className="bg-canvas-warm border-b border-border py-4">
+        <Container size="wide">
+          <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs text-ink-muted">
+            <Link to="/" className="hover:text-plum-900 transition-colors">
+              Home
+            </Link>
+            <span className="text-gold-500/80">/</span>
+            <span className="text-plum-900 font-medium">Programs</span>
+          </nav>
+        </Container>
+      </div>
+
+      {/* Main Programs & Trainers Section */}
+      <ProgramsSection />
+    </div>
+  );
+};
+
+export default ProgramsPage;
